@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
+
+
+  get 'listings/new'
+
+  get 'reservations/:id' => 'reservations#show'
+
+  get 'listings/index'
+
   resources :users
 
-  resources :listings
+  resources :listings do 
+    resources :reservations
+  end
 
   resources :neighborhoods
 
