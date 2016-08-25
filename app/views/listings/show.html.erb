@@ -1,0 +1,6 @@
+<p>Find me in app/views/listings/show.html.erb</p>
+  <p>Listing: <%= @listing.title %></p>
+  <p>Description: <%= @listing.description %></p>
+  <p>Price<%= @listing.price %></p>
+
+  <p>Neighborhood: <%= @neighborhood.try(:name) || "No listed Neighborhood" %></p>

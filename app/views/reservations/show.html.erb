@@ -1,0 +1,6 @@
+<h1>You're going on a trip in our favorite rocket ship!</h1>
+
+<h3>AT:  <%= @reservation.listing.title %></h3>
+
+from: <%= @reservation.checkin.to_datetime.readable_inspect%>
+Till: <%= @reservation.checkout.to_datetime.readable_inspect %>

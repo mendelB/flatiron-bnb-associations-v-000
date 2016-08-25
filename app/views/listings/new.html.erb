@@ -1,0 +1,18 @@
+<%= form_for @listing do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+  <p>Select a Neighberhood</p>
+  <%= f.collection_select :neighborhood_id, Neighborhood.all, :id, :name %><br>
+  <p>Or create a new one</p>
+  <%= f.fields_for :neighborhood, @listing.build_neighborhood do |n| %>
+    <%= n.label :name %>
+    <%= n.text_field :name %>
+  <% end %>
+  <%= f.submit %>
+<% end %>
